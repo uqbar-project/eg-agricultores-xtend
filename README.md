@@ -97,8 +97,8 @@ cultivo (considerar que el silo es ilimitado en capacidad)
 
 ## Branches
 
-* solución previa a un refactor: **branch code-smell**.
-* solución refactorizada: **branch refactoring**.
+* solución previa a un refactor: **branch [code-smell](https://github.com/uqbar-project/eg-agricultores-xtend/tree/code-smell)**.
+* solución refactorizada: **branch [refactoring](https://github.com/uqbar-project/eg-agricultores-xtend/tree/refactoring)**.
    
 La solución refactorizada implementa un extension method (al calcular el costo para el trigo), el pattern **Strategy** (tipos de comprador) y un **template method** (costo base de un cultivo)
 
