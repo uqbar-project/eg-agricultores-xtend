@@ -54,7 +54,9 @@ Cada parcela es administrada por un capataz, quien registra las ventas que se pr
 
 El precio total de la venta se calcula como
 
-|FV Cantidad kilos vendidos * precio venta x kg según la parcela * % coeficiente de ajuste|
+```
+FV Cantidad kilos vendidos * precio venta x kg según la parcela * % coeficiente de ajuste
+```
 
 El coeficiente de ajuste lo determina el comprador:
 
