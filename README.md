@@ -3,6 +3,7 @@
 
 ![image](images/agricultores.png) 
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/819d9eb4ca5f4968a261e9eac7a5a7bc)](https://www.codacy.com/app/fernando-dodino/eg-agricultores-xtend?utm_source=github.com&utm_medium=referral&utm_content=uqbar-project/eg-agricultores-xtend&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/uqbar-project/eg-agricultores-xtend.svg?branch=code-smell)](https://travis-ci.org/uqbar-project/eg-agricultores-xtend)
 
 ## Dominio
