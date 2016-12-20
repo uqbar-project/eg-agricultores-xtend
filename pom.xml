@@ -9,8 +9,6 @@
 		<version>2.9.1</version>
 	</parent>
 	<build>
-		<sourceDirectory>src/main/generated-sources/xtend</sourceDirectory>
-		<testSourceDirectory>src/test/generated-sources/xtend</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -32,21 +30,73 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.eluder.coveralls</groupId>
-				<artifactId>coveralls-maven-plugin</artifactId>
-				<version>3.0.1</version>
-
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+				<version>1.0.0</version>
 				<configuration>
-					<coberturaReports>
-						<coberturaReport>
-							${basedir}/target/coverage.xml
-						</coberturaReport>
-					</coberturaReports>
-					<sourceEncoding>UTF-8</sourceEncoding>
-					<serviceName>travis-ci</serviceName>
-					<serviceJobId>${env.TRAVIS_JOB_ID} </serviceJobId>
+					<lifecycleMappingMetadata>
+						<pluginExecutions>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>org.jacoco</groupId>
+									<artifactId>jacoco-maven-plugin</artifactId>
+									<versionRange>[0.7.2.201409121644,)</versionRange>
+									<goals>
+										<goal>prepare-agent</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<ignore></ignore>
+								</action>
+							</pluginExecution>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>org.codehaus.mojo</groupId>
+									<artifactId>build-helper-maven-plugin</artifactId>
+									<versionRange>[1.9.1,)</versionRange>
+									<goals>
+										<goal>add-resource</goal>
+										<goal>add-source</goal>
+										<goal>add-test-resource</goal>
+										<goal>add-test-source</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<ignore></ignore>
+								</action>
+							</pluginExecution>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>org.eclipse.tycho</groupId>
+									<artifactId>tycho-compiler-plugin</artifactId>
+									<versionRange>[0.25.0,)</versionRange>
+									<goals>
+										<goal>compile</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<ignore></ignore>
+								</action>
+							</pluginExecution>
+							<pluginExecution>
+								<pluginExecutionFilter>
+									<groupId>org.eclipse.tycho</groupId>
+									<artifactId>tycho-packaging-plugin</artifactId>
+									<versionRange>[0.23.1,)</versionRange>
+									<goals>
+										<goal>build-qualifier</goal>
+										<goal>validate-id</goal>
+										<goal>validate-version</goal>
+									</goals>
+								</pluginExecutionFilter>
+								<action>
+									<ignore></ignore>
+								</action>
+							</pluginExecution>
+						</pluginExecutions>
+					</lifecycleMappingMetadata>
 				</configuration>
-			</plugin>			
+			</plugin>
 		</plugins>
 	</build>
 </project>
