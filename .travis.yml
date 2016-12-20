@@ -1,10 +1,12 @@
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
 
-after_success:
-  - mvn clean test jacoco:report 
-  - bash <(curl -s https://codecov.io/bash)
+script:
+  - mvn -e -DupdateSiteFolder=$UPDATE_SITE -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID clean  install jacoco:report coveralls:report -P $PROFILES
+
+#after_success:
+#  - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email:
