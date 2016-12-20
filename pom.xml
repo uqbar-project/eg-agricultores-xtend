@@ -9,8 +9,6 @@
 		<version>2.9.1</version>
 	</parent>
 	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
-		<testSourceDirectory>src/test/java</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.jacoco</groupId>
