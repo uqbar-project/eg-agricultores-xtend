@@ -3,7 +3,7 @@ jdk:
   - oraclejdk8
 
 script:
-  - mvn -e -DupdateSiteFolder=$UPDATE_SITE -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID clean  install jacoco:report coveralls:report -P $PROFILES
+  - mvn -e -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID clean install jacoco:report coveralls:report
 
 #after_success:
 #  - bash <(curl -s https://codecov.io/bash)
