@@ -40,7 +40,7 @@
 								<pluginExecutionFilter>
 									<groupId>org.jacoco</groupId>
 									<artifactId>jacoco-maven-plugin</artifactId>
-									<versionRange>[0.7.2.201409121644,)</versionRange>
+									<versionRange>[0.7.7,)</versionRange>
 									<goals>
 										<goal>prepare-agent</goal>
 									</goals>
@@ -59,34 +59,6 @@
 										<goal>add-source</goal>
 										<goal>add-test-resource</goal>
 										<goal>add-test-source</goal>
-									</goals>
-								</pluginExecutionFilter>
-								<action>
-									<ignore></ignore>
-								</action>
-							</pluginExecution>
-							<pluginExecution>
-								<pluginExecutionFilter>
-									<groupId>org.eclipse.tycho</groupId>
-									<artifactId>tycho-compiler-plugin</artifactId>
-									<versionRange>[0.25.0,)</versionRange>
-									<goals>
-										<goal>compile</goal>
-									</goals>
-								</pluginExecutionFilter>
-								<action>
-									<ignore></ignore>
-								</action>
-							</pluginExecution>
-							<pluginExecution>
-								<pluginExecutionFilter>
-									<groupId>org.eclipse.tycho</groupId>
-									<artifactId>tycho-packaging-plugin</artifactId>
-									<versionRange>[0.23.1,)</versionRange>
-									<goals>
-										<goal>build-qualifier</goal>
-										<goal>validate-id</goal>
-										<goal>validate-version</goal>
 									</goals>
 								</pluginExecutionFilter>
 								<action>
