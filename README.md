@@ -3,6 +3,8 @@
 
 ![image](images/agricultores.png) 
 
+[![Build Status](https://travis-ci.org/uqbar-project/eg-agricultores-xtend.svg?branch=code-smell)](https://travis-ci.org/uqbar-project/eg-agricultores-xtend)
+
 ## Dominio
 
 Se pide modelar una solución para un grupo de agricultores, que tienen parcelas.
