@@ -5,6 +5,8 @@
 
 [![Build Status](https://travis-ci.org/uqbar-project/eg-agricultores-xtend.svg?branch=code-smell)](https://travis-ci.org/uqbar-project/eg-agricultores-xtend)
 
+![codecov.io](https://codecov.io/github/uqbar-project/eg-agricultores-xtend/coverage.svg?branch=code-smell)](https://codecov.io/github/uqbar-project/eg-agricultores-xtend?branch=code-smell)
+
 ## Dominio
 
 Se pide modelar una solución para un grupo de agricultores, que tienen parcelas.
