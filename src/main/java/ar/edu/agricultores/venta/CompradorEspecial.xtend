@@ -1,23 +1,14 @@
 package ar.edu.agricultores.venta
 
-import java.util.List
 import ar.edu.agricultores.Cultivo
-import java.util.ArrayList
+import java.util.List
 
 class CompradorEspecial extends Comprador {
 	
-	List<Cultivo> cultivosExentos
-	
-	new() {
-		cultivosExentos = new ArrayList<Cultivo>()
-	}
+	List<Cultivo> cultivosExentos = newArrayList
 	
 	override coeficienteAjuste(Venta venta) {
-		if (cultivosExentos.contains(venta.cultivo)) {
-			0.1
-		} else {
-			0
-		}
+		if (cultivosExentos.contains(venta.cultivo)) 0.1 else 0
 	}
 		
 }

@@ -2,11 +2,11 @@ package ar.edu.agricultores
 
 abstract class Cultivo {
 	
-	override boolean equals(Object object) {
+	override equals(Object object) {
 		toString.equals(object.toString)	
 	}
 	
-	override int hashCode() {
+	override hashCode() {
 		toString.hashCode
 	}
 	

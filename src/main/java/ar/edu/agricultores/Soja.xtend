@@ -5,7 +5,7 @@ import ar.edu.agricultores.Parcela
 
 class Soja extends Cultivo {
 
-	override String toString() {
+	override toString() {
 		"Soja"	
 	}
 	
@@ -20,11 +20,7 @@ class Soja extends Cultivo {
 	}
 	
 	def double porcentajeDescuento(Parcela parcela) { 
-		if (parcela.sujetaARetencion()) {
-			0.1
-		} else {
-			0
-		}
+		if (parcela.sujetaARetencion()) 0.1 else 0
 	}
 
 }

@@ -7,18 +7,17 @@ class SojaTransgenica extends Soja {
 
 	boolean puedeSufrirMutaciones
 	
-	new(boolean pPuedeSufrirMutaciones) {
-		puedeSufrirMutaciones = pPuedeSufrirMutaciones
+	new(boolean _puedeSufrirMutaciones) {
+		puedeSufrirMutaciones = _puedeSufrirMutaciones
 	}
 	
 	override precioVentaPorKg(Parcela parcela) {
-		val precioVenta = super.precioVentaPorKg(parcela)
-		if (puedeSufrirMutaciones) {
-			precioVenta / 2	
-		} else {
-			precioVenta
-		}
-	}	
+		super.precioVentaPorKg(parcela) * factorPorMutaciones
+	}
+	
+	def factorPorMutaciones() {
+		if (puedeSufrirMutaciones) 0.5 else 1
+	}
 	
 	override String toString() {
 		"Soja Transgenica"	

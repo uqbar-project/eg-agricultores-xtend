@@ -1,17 +1,12 @@
 package ar.edu.agricultores
 
-import java.util.ArrayList
 import java.util.List
 
 import static extension util.NumberUtil.*
 
 class Trigo extends Cultivo {
 
-	List<Conservante> conservantes
-
-	new() {
-		conservantes = new ArrayList<Conservante>()
-	}
+	List<Conservante> conservantes = newArrayList
 
 	// PUNTO 1
 	override double costoPara(Parcela parcela) {

@@ -10,10 +10,10 @@ class Parcela {
 	int hectareasCultivadas
 	int cantidadEnSilo
 
-	new(int pHectareas, Cultivo pCultivo) {
-		hectareas = pHectareas
-		hectareasCultivadas = pHectareas // por default cultivamos todos
-		cultivo = pCultivo
+	new(int _hectareas, Cultivo _cultivo) {
+		hectareas = _hectareas
+		hectareasCultivadas = _hectareas // por default cultivamos todos
+		cultivo = _cultivo
 	}
 
 	// PUNTO 1

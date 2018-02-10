@@ -10,11 +10,7 @@ class Sorgo extends Cultivo {
 	
 	// PUNTO 1
 	override costoBasePorHectarea(Parcela parcela) {
-		if (parcela.hectareasCultivadas < 50) { 
-			3 
-		} else {
-			2
-		}
+		if (parcela.hectareasCultivadas < 50) 3 else 2 
 	}
 
 }

@@ -1,17 +1,12 @@
 package ar.edu.agricultores
 
-import java.util.ArrayList
 import java.util.HashSet
 import java.util.List
 import java.util.Set
 
 class Agricultor {
 
-	List<Parcela> parcelas
-
-	new() {
-		parcelas = new ArrayList<Parcela>()
-	}
+	List<Parcela> parcelas = newArrayList
 
 	def void agregarParcela(Parcela parcela) {
 		parcelas.add(parcela)

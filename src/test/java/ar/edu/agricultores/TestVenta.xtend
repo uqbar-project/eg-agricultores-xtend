@@ -18,25 +18,25 @@ class TestVenta {
 	def void init() {
 		parcela50 = new Parcela(50, new Sorgo)	
 		
-		ventaNacional = new Venta
-		ventaNacional.cantidadKilos = 12
-		// Cambio del refactor
-		ventaNacional.comprador = new CompradorNacional
+		ventaNacional = new Venta => [
+			cantidadKilos = 12
+			fechaVenta = new Date
+			parcela = parcela50
+			// Cambio del refactor
+			comprador = new CompradorNacional
+		]
 		//
-		ventaNacional.fechaVenta = new Date
-		ventaNacional.parcela = parcela50 
 
-		ventaExportacion = new Venta
-		ventaExportacion.cantidadKilos = 11
-		// Cambio del refactor
-		ventaExportacion.comprador = new CompradorExtranjero
-		//
-		ventaExportacion.fechaVenta = new Date
-		ventaExportacion.parcela = parcela50 
+		ventaExportacion = new Venta => [
+			cantidadKilos = 11
+			fechaVenta = new Date
+			parcela = parcela50
+			// Cambio del refactor
+			comprador = new CompradorExtranjero
+		]
 	}
 
 	// PUNTO 3
-	
 	@Test
 	def testVentaCompradorNacionalMenos500Kilos() {
 		Assert.assertEquals(240, ventaNacional.precio, 0.1)
