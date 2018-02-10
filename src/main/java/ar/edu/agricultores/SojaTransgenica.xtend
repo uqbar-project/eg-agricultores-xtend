@@ -7,8 +7,8 @@ class SojaTransgenica extends Soja {
 
 	boolean puedeSufrirMutaciones
 
-	new(boolean pPuedeSufrirMutaciones) {
-		puedeSufrirMutaciones = pPuedeSufrirMutaciones
+	new(boolean _puedeSufrirMutaciones) {
+		puedeSufrirMutaciones = _puedeSufrirMutaciones
 	}
 
 	override String toString() {
