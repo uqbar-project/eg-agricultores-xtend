@@ -3,7 +3,7 @@
 
 ![image](images/agricultores.png) 
 
-[![Build Status](https://travis-ci.org/uqbar-project/eg-agricultores-xtend.svg?branch=code-smell)](https://travis-ci.org/uqbar-project/eg-agricultores-xtend) [![Coverage Status](https://coveralls.io/repos/github/uqbar-project/eg-agricultores-xtend/badge.svg?branch=code-smell)](https://coveralls.io/github/uqbar-project/eg-agricultores-xtend?branch=code-smell)
+[![Build Status](https://travis-ci.org/uqbar-project/eg-agricultores-xtend.svg?branch=code-smell)](https://travis-ci.org/uqbar-project/eg-agricultores-xtend) [![Coverage Status](https://coveralls.io/repos/github/uqbar-project/eg-agricultores-xtend/badge.svg?branch=code-smell&service=github)](https://coveralls.io/github/uqbar-project/eg-agricultores-xtend?branch=code-smell&service=github)
 
 ## Dominio
 
