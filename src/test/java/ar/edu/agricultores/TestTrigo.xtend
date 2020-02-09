@@ -1,45 +1,54 @@
 package ar.edu.agricultores
 
-import org.junit.Assert
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
 
+import static org.junit.jupiter.api.Assertions.assertEquals
+
+@DisplayName("Dado un cultivo de trigo")
 class TestTrigo {
 
-	Parcela parcela200
-	Parcela parcela50
+	Parcela parcelaGrande
+	Parcela parcelaChica
+	Parcela parcelaConConservantes
 	
-	@Before
+	@BeforeEach
 	def void init() {
+		parcelaChica = new Parcela(50, new Trigo)
+		parcelaGrande = new Parcela(200, new Trigo)
 		val Trigo cultivoTrigo = new Trigo
 		cultivoTrigo.agregarConservante(new Conservante(2, "Glifosato"))
 		cultivoTrigo.agregarConservante(new Conservante(5, "Sulfatadina M-150"))
-		parcela50 = new Parcela(50, cultivoTrigo)
-		parcela200 = new Parcela(200, new Trigo)
+		parcelaConConservantes = new Parcela(50, cultivoTrigo)
 	}
 
 	// PUNTO 1
 	
 	@Test
-	def testCostoBaseParcela200Hectareas() {
-		Assert.assertEquals(500, parcela200.costoTotal, 0.1)
+	@DisplayName("el costo de cultivar una parcela grande tiene un tope máximo")
+	def testCostoBaseParcelaGrande() {
+		assertEquals(500, parcelaGrande.costoTotal, 0.01)
 	}
 
 	@Test
-	def testCostoBaseParcela50Hectareas() {
-		Assert.assertEquals(250, parcela50.costoTotal, 0.1)
+	@DisplayName("el costo de cultivar una parcela chica depende del tamaño de la parcela")
+	def testCostoBaseParcelaChica() {
+		assertEquals(250, parcelaChica.costoTotal, 0.01)
 	}
 
 	// PUNTO 2
 
 	@Test
-	def testVentaSojaParcelaChica() {
-		Assert.assertEquals(13, parcela50.precioVenta, 0.1)
+	@DisplayName("al precio de venta del cultivo se le descuentan los conservantes")
+	def testVentaSojaParcelaConConservantes() {
+		assertEquals(13, parcelaConConservantes.precioVenta, 0.01)
 	}		
 
 	@Test
-	def testVentaSojaParcelaGrande() {
-		Assert.assertEquals(20, parcela200.precioVenta, 0.1)
+	@DisplayName("el precio de venta del cultivo sin conservantes depende de los kilos")
+	def testVentaSojaParcelaSinConservantes() {
+		assertEquals(20, parcelaGrande.precioVenta, 0.01)
 	}
 
 }

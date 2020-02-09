@@ -1,40 +1,42 @@
 package ar.edu.agricultores
 
-import org.junit.Assert
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
 
+import static org.junit.jupiter.api.Assertions.assertEquals
+
+@DisplayName("Dado un cultivo de soja")
 class TestSoja {
 	
-	Parcela parcela50
-	Parcela parcela300
-	Parcela parcela2000
+	Parcela parcelaChica
+	Parcela parcelaGrande
 	
-	@Before
+	@BeforeEach
 	def void init() {
-		parcela50 = new Parcela(50, new Soja)	
-		parcela300 = new Parcela(300, new Soja)
-		parcela2000 = new Parcela(2000, new Soja)
+		parcelaChica = new Parcela(300, new Soja)
+		parcelaGrande = new Parcela(2000, new Soja)
 	}
 	
 	// PUNTO 1
 	
 	@Test
-	def testCostoSoja() {
-		Assert.assertEquals(500, parcela50.costoTotal, 0.1)
-		Assert.assertEquals(3000, parcela300.costoTotal, 0.1)
+	@DisplayName("el costo total de cultivarlo depende del tamaño de la parcela")
+	def testCostoSojaParcelaGrande() {
+		assertEquals(3000, parcelaChica.costoTotal, 0.01)
 	}		
 
 	// PUNTO 2
-	
 	@Test
+	@DisplayName("el precio de venta del cultivo depende del tamaño de la parcela")
 	def testVentaSojaParcelaChica() {
-		Assert.assertEquals(30000, parcela300.precioVenta, 0.1)
+		assertEquals(30000, parcelaChica.precioVenta, 0.01)
 	}		
 
 	@Test
+	@DisplayName("el precio de venta de una parcela grande está afectado por una retención adicional")
 	def testVentaSojaParcelaGrande() {
-		Assert.assertEquals(180000, parcela2000.precioVenta, 0.1)
+		assertEquals(180000, parcelaGrande.precioVenta, 0.01)
 	}		
 		
 }

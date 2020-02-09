@@ -23,6 +23,6 @@ class Venta {
 
 	def cultivo() {
 		parcela.cultivo
-	} 
+	}
 	
 }
