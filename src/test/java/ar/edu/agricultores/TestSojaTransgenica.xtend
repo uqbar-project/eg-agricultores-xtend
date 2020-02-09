@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 
 import static org.junit.jupiter.api.Assertions.assertEquals
 
-@DisplayName("Dado un cultivo de Soja Transgénica")
+@DisplayName("Dado un cultivo de soja transgénica")
 class TestSojaTransgenica {
 	
 	Parcela parcelaConMutacionesGeneticas

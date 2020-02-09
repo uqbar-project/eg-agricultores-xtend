@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 
 import static org.junit.jupiter.api.Assertions.assertEquals
 
-@DisplayName("Dado un cultivo de Sorgo")
+@DisplayName("Dado un cultivo de sorgo")
 class TestSorgo {
 	
 	Parcela parcelaChica
