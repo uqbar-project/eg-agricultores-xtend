@@ -13,7 +13,7 @@ class Venta {
 	Date fechaNacimientoComprador
 	String nombreComprador
 	String tipoComprador
-	List<Cultivo> cultivosSinRecargo
+	List<Cultivo> cultivosSinRecargo = newArrayList
 
 	public static double COEFICIENTE_PARA_EXTRANJEROS = 0.4
 
@@ -36,11 +36,14 @@ class Venta {
 			return COEFICIENTE_PARA_EXTRANJEROS
 		}
 		if (tipoComprador == "S") { // Especial
-			if (cultivosSinRecargo.contains(parcela.cultivo)) {
+			if (!cultivosSinRecargo.contains(parcela.cultivo)) {
 				return 0.05
 			}
 		}
 		return 0.0d
 	}
 
+	def void agregarCultivoSinRecargo(Cultivo cultivo) {
+		cultivosSinRecargo.add(cultivo)
+	}
 }

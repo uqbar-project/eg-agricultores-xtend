@@ -1,38 +1,43 @@
 package ar.edu.agricultores
 
-import org.junit.Assert
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
 
+import static org.junit.jupiter.api.Assertions.assertEquals
+
+@DisplayName("Dado un cultivo de Soja Transgénica")
 class TestSojaTransgenica {
 	
-	Parcela parcela50
-	Parcela parcela200
+	Parcela parcelaConMutacionesGeneticas
+	Parcela parcelaSinMutacionesGeneticas
 	
-	@Before
+	@BeforeEach
 	def void init() {
-		parcela50 = new Parcela(50, new SojaTransgenica(true))	
-		parcela200 = new Parcela(200, new SojaTransgenica(false))
+		parcelaConMutacionesGeneticas = new Parcela(50, new SojaTransgenica(true))	
+		parcelaSinMutacionesGeneticas = new Parcela(200, new SojaTransgenica(false))
 	}
 	
 	// PUNTO 1
 	
 	@Test
+	@DisplayName("el costo de su cultivo está en función del tamaño de la parcela")
 	def testCostoSojaTransgenica() {
-		Assert.assertEquals(500, parcela50.costoTotal, 0.1)
-		Assert.assertEquals(2000, parcela200.costoTotal, 0.1)
+		assertEquals(500, parcelaConMutacionesGeneticas.costoTotal, 0.01)
 	}	
 	
 	// PUNTO 2
 	
 	@Test
-	def testVentaSojaParcelaChica() {
-		Assert.assertEquals(2500,parcela50.precioVenta, 0.1)
+	@DisplayName("el precio de venta cuando tiene mutaciones genéticas es la mitad del precio que se calcula para la soja")
+	def testVentaSojaConMutacionesGeneticas() {
+		assertEquals(2500, parcelaConMutacionesGeneticas.precioVenta, 0.01)
 	}		
 
 	@Test
-	def testVentaSojaParcelaGrande() {
-		Assert.assertEquals(20000, parcela200.precioVenta, 0.1)
+	@DisplayName("el precio de venta cuando no tiene mutaciones genéticas es similar al de la soja")
+	def testVentaSojaSinMutacionesGeneticas() {
+		assertEquals(20000, parcelaSinMutacionesGeneticas.precioVenta, 0.01)
 	}	
 	
 }

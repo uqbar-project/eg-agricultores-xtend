@@ -12,7 +12,7 @@ class Parcela {
 
 	new(int _hectareas, Cultivo _cultivo) {
 		hectareas = _hectareas
-		hectareasCultivadas = _hectareas // por default cultivamos todos
+		hectareasCultivadas = _hectareas // por default cultivamos todo
 		cultivo = _cultivo
 	}
 
