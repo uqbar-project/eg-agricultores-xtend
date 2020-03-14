@@ -11,6 +11,5 @@ class Agricultor {
 	def void agregarParcela(Parcela parcela) {
 		parcelas.add(parcela)
 	}	
+
 }
-
-
